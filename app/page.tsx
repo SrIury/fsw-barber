@@ -4,10 +4,8 @@ import { Button } from "./_components/ui/ui/button"
 import { Input } from "./_components/ui/ui/input"
 import Image from "next/image"
 import { Card, CardContent } from "./_components/ui/ui/card"
-import { Badge } from "./_components/ui/ui/badge"
-import { Avatar, AvatarImage } from "./_components/ui/ui/avatar"
 import { db } from "./_lib/prisma"
-import BarbershoItem from "./_components/ui/barbershop-Item"
+import BarbershopItem from "./_components/ui/barbershop-Item"
 import { quickSearchOptions } from "./_constants/search"
 import BookingItem from "./_components/ui/booking-item"
 
@@ -42,14 +40,14 @@ const Home = async () => {
         <div className="flex gap-3 mt-6 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
           {quickSearchOptions.map(option => (
             <Button className="gap-2" variant="secondary" key={option.title}>
-            <Image src={option.imageUrl} 
-            width={16} 
-            height={16} 
-            alt={option.title} 
-            />
-            {option.title}
-          </Button>
-          ) )}
+              <Image src={option.imageUrl}
+                width={16}
+                height={16}
+                alt={option.title}
+              />
+              {option.title}
+            </Button>
+          ))}
 
         </div>
 
@@ -72,7 +70,7 @@ const Home = async () => {
         {/* IMAGEM */}
         <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
           {barbershops.map(barbershop => (
-            <BarbershoItem key={barbershop.id} barbershop={barbershop} />
+            <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
         </div>
 
@@ -82,7 +80,7 @@ const Home = async () => {
         {/* IMAGEM */}
         <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
           {popularBarbershops.map(barbershop => (
-            <BarbershoItem key={barbershop.id} barbershop={barbershop} />
+            <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
         </div>
 
