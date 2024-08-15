@@ -3,7 +3,7 @@ import ServiceItem from "@/app/_components/ui/service-item";
 import { Button } from "@/app/_components/ui/ui/button";
 import { db } from "@/app/_lib/prisma";
 import { ChevronLeftIcon, MapPinIcon, MenuIcon, StarIcon } from "lucide-react";
-import Image from "next/Image"
+import Image from "next/image"
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -33,7 +33,7 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
             {/* IMAGE */}
             <div className="relative h-[250px] w-full">
                 <Image
-
+                    alt={barbershop.name}
                     src={barbershop?.imageUrl}
                     fill
                     className="object-cover"
