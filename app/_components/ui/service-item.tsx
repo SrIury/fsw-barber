@@ -22,7 +22,7 @@ const ServiceItem = ({ service }: ServiceItemProps) => {
                 </div>
 
                 {/* DIREITA */}
-                <div className="space-y-2">
+                <div className="space-y-3">
                     <h3 className="font-semibold text-sm">{service.name}</h3>
                     <p className="text-sm text-gray-400">{service.description}</p>
 
