@@ -8,12 +8,12 @@ import { quickSearchOptions } from "@/app/_constants/search";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
-import { signIn, useSession } from "next-auth/react";
+import { signIn, useSession, signOut } from "next-auth/react";
 
 const SidebarSheet = () => {
     const { data } = useSession()
     const handleLoginWithGoogleClick = () => signIn("google")
-    // const handleLogoutClick = () => signOut()
+    const handleLogoutClick = () => signOut()
 
     return (
         <SheetContent>
@@ -106,7 +106,7 @@ const SidebarSheet = () => {
                 <Button 
                 variant="ghost" 
                 className="justify-start gap-2"
-                // onClick={handleLogoutClick}
+                onClick={handleLogoutClick}
                 >
                     <LogOutIcon size={18} />
                     Sair da conta
