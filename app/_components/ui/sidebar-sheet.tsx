@@ -66,7 +66,7 @@ const SidebarSheet = () => {
                         </Dialog>
                     </>
 
-                    )}
+                )}
             </div>
 
 
@@ -88,25 +88,30 @@ const SidebarSheet = () => {
             </div>
             <div className="flex flex-col gap-2 py-5 border-b border-solid">
                 {quickSearchOptions.map((Option) => (
-                    <Button
-                        key={Option.title}
-                        className="justify-start gap-2"
-                        variant={"ghost"}>
-                        <Image
-                            alt={Option.title}
-                            src={Option.imageUrl}
-                            height={18}
-                            width={18} />
-                        {Option.title}
-                    </Button>
+                    <SheetClose key={Option.title} asChild>
+                        <Button
+                            className="justify-start gap-2"
+                            variant={"ghost"}
+                            asChild>
+
+                            <Link href={`/barbershops?service=${Option.title}`}>
+                                <Image
+                                    alt={Option.title}
+                                    src={Option.imageUrl}
+                                    height={18}
+                                    width={18} />
+                                {Option.title}
+                            </Link>
+                        </Button>
+                    </SheetClose>
                 ))}
             </div>
 
             <div className="flex flex-col gap-2 border-b border-solid">
-                <Button 
-                variant="ghost" 
-                className="justify-start gap-2"
-                onClick={handleLogoutClick}
+                <Button
+                    variant="ghost"
+                    className="justify-start gap-2"
+                    onClick={handleLogoutClick}
                 >
                     <LogOutIcon size={18} />
                     Sair da conta
